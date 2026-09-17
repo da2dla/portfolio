@@ -1,7 +1,23 @@
+document.body.classList.add('loading');
+
+const loader = document.querySelector('.loader');
 const progress = document.querySelector('.progress');
+const heroWord = document.querySelector('.hero-word');
+const impossible = document.querySelector('.impossible');
 const reveals = document.querySelectorAll('.reveal');
+const workRows = document.querySelectorAll('.work-row');
+const previewFrame = document.querySelector('.preview-frame');
+const preview = document.querySelector('#project-preview');
 const menu = document.querySelector('.menu');
 const nav = document.querySelector('.topbar nav');
+const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+addEventListener('load', () => {
+  setTimeout(() => {
+    loader.classList.add('done');
+    document.body.classList.remove('loading');
+  }, reducedMotion ? 0 : 650);
+});
 
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -9,14 +25,57 @@ const revealObserver = new IntersectionObserver((entries) => {
     entry.target.classList.add('visible');
     revealObserver.unobserve(entry.target);
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.12 });
 
 reveals.forEach((element) => revealObserver.observe(element));
 
-const updateProgress = () => {
-  const total = document.documentElement.scrollHeight - innerHeight;
-  progress.style.transform = `scaleX(${total > 0 ? scrollY / total : 0})`;
+const setPreview = (row) => {
+  if (row.classList.contains('active')) return;
+  workRows.forEach((item) => item.classList.remove('active'));
+  row.classList.add('active');
+  previewFrame.classList.add('swapping');
+  const nextImage = new Image();
+  nextImage.src = row.dataset.image;
+  nextImage.onload = () => {
+    setTimeout(() => {
+      preview.src = nextImage.src;
+      previewFrame.classList.remove('swapping');
+    }, 150);
+  };
 };
+
+workRows.forEach((row) => {
+  row.addEventListener('mouseenter', () => setPreview(row));
+  row.addEventListener('focusin', () => setPreview(row));
+});
+
+const rowObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) setPreview(entry.target);
+  });
+}, { rootMargin: '-42% 0px -42% 0px', threshold: 0 });
+
+workRows.forEach((row) => rowObserver.observe(row));
+
+let pointerX = 0;
+let pointerY = 0;
+addEventListener('pointermove', (event) => {
+  pointerX = (event.clientX / innerWidth - 0.5) * 10;
+  pointerY = (event.clientY / innerHeight - 0.5) * -7;
+}, { passive: true });
+
+const render = () => {
+  const y = scrollY;
+  const heroRatio = Math.min(y / Math.max(innerHeight, 1), 1);
+  progress.style.transform = `scaleX(${y / Math.max(document.documentElement.scrollHeight - innerHeight, 1)})`;
+  if (!reducedMotion && heroRatio < 1) {
+    impossible.style.transform = `translate(-50%, calc(-50% + ${y * 0.08}px)) rotateX(${pointerY}deg) rotateY(${pointerX}deg) rotateZ(${-4 + heroRatio * 13}deg)`;
+    heroWord.style.transform = `translate(calc(-50% - ${y * 0.035}px), calc(-50% + ${y * 0.04}px))`;
+  }
+  requestAnimationFrame(render);
+};
+
+requestAnimationFrame(render);
 
 menu.addEventListener('click', () => {
   const open = menu.getAttribute('aria-expanded') === 'true';
@@ -24,6 +83,3 @@ menu.addEventListener('click', () => {
   menu.textContent = open ? '/MENU' : '/CLOSE';
   nav.classList.toggle('open', !open);
 });
-
-updateProgress();
-addEventListener('scroll', updateProgress, { passive: true });

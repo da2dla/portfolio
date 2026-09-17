@@ -4,68 +4,108 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="정다희 백엔드 엔지니어 포트폴리오 — 실패 이후의 상태까지 설계합니다." />
-  <meta name="theme-color" content="#f3f2ee" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b43ff'/%3E%3Cpath d='M8 8h7v7H8zm9 9h7v7h-7z' fill='white'/%3E%3C/svg%3E" />
+  <meta name="theme-color" content="#f2f2f0" />
   <link rel="stylesheet" href="./styles.css" />
   <title>Jeong Dahee — Backend Engineer</title>
 </head>
 <body>
   <a class="skip" href="#main">본문으로 바로가기</a>
+  <div class="loader" aria-hidden="true"><span>DAHEE.JEONG</span><i></i></div>
   <header class="topbar">
-    <a class="wordmark" href="#top">dahee.jeong</a>
-    <nav aria-label="주요 메뉴"><a href="#work">/WORK</a><a href="#decisions">/DECISIONS</a><a href="#about">/ABOUT</a><a href="mailto:ekgmljeong@naver.com">/CONTACT</a></nav>
-    <button class="menu" type="button" aria-label="메뉴 열기" aria-expanded="false">/MENU</button>
+    <a class="brand" href="#top">dahee<sup>®</sup></a>
+    <nav aria-label="주요 메뉴">
+      <a href="#work">/WORK</a><a href="#system">/SYSTEM</a><a href="#about">/ABOUT</a><a href="#contact">/CONTACT</a>
+    </nav>
+    <button class="menu" type="button" aria-expanded="false">/MENU</button>
   </header>
+
   <main id="main">
     <section class="hero" id="top">
-      <p class="hero-index">BACKEND ENGINEER — SEOUL, KR</p>
-      <h1 aria-label="Resilient"><span>RE</span>SILIENT</h1>
-      <div class="hero-object" aria-hidden="true"><span class="orbit orbit-a"></span><span class="orbit orbit-b"></span><img src="./assets/safy-mark.jpg" alt="" /></div>
-      <p class="hero-copy">정상 흐름을 구현하는 데서 멈추지 않습니다.<br /><em>실패 뒤에 남는 상태까지 설계합니다.</em></p>
-      <div class="hero-foot"><span>JAVA 21 / SPRING BOOT / POSTGRESQL</span><span>PORTFOLIO — 2026</span><a href="#work">SCROLL ↓</a></div>
+      <div class="hero-word" aria-label="Reliable"><span>RE</span><b>LIABLE</b></div>
+      <div class="impossible" aria-hidden="true">
+        <svg viewBox="0 0 200 180" role="presentation">
+          <defs><filter id="shadow"><feDropShadow dx="11" dy="15" stdDeviation="4" flood-opacity=".22" /></filter></defs>
+          <g filter="url(#shadow)">
+            <polygon points="100,10 190,160 156,160 83,38" fill="#25262a" />
+            <polygon points="190,160 20,160 38,130 156,130" fill="#0d0d0f" />
+            <polygon points="20,160 100,10 117,39 52,160" fill="#151518" />
+            <polygon points="83,38 100,67 65,130 38,130" fill="#35363b" />
+          </g>
+        </svg>
+      </div>
+      <div class="hero-statement"><p>정상 흐름을 구현하는 데서 멈추지 않습니다.</p><em>실패 뒤에 남는 상태까지 설계합니다.</em></div>
+      <div class="hero-meta"><span>BACKEND ENGINEER · SEOUL</span><span>JAVA / SPRING / POSTGRESQL</span><a href="#work">SCROLL TO INSPECT ↓</a></div>
     </section>
 
     <section class="work" id="work">
-      <header class="section-head light"><p><span>01</span> — SELECTED WORK</p><p>ONE PROJECT / FIVE ENGINEERING DECISIONS</p></header>
-      <div class="work-title"><p>SAFY — URBAN SAFETY PLATFORM</p><h2>Work that<br /><i>survives failure.</i></h2></div>
-      <div class="project-wall">
-        <article class="wall-shot wall-shot-main reveal"><div class="shot-frame"><img src="./assets/feed.jpg" alt="SAFY 공개 제보 피드 화면" /></div><div class="shot-meta"><span>01 / PUBLIC FEED</span><span>PUBLIC DTO BOUNDARY</span><span>2026</span></div></article>
-        <article class="wall-note reveal"><span>PROJECT / 001</span><p>도시 안전 제보를<br />위험도와 관제 업무로<br />연결하는 서비스</p><small>Backend lead · Frontend contribution</small></article>
-        <article class="wall-shot wall-shot-side reveal"><div class="shot-frame"><img src="./assets/report.jpg" alt="SAFY 제보 등록 화면" /></div><div class="shot-meta"><span>02 / REPORT</span><span>SERVER-SIDE ADDRESS</span></div></article>
-        <article class="wall-shot wall-shot-live reveal"><div class="shot-frame dark"><img src="./assets/live.jpg" alt="SAFY 실시간 제보 화면" /></div><div class="shot-meta"><span>03 / LIVE</span><span>ASSET EXPOSURE POLICY</span></div></article>
+      <div class="section-label"><span>01</span><i>—</i><b>SELECTED WORK</b></div>
+      <div class="work-grid">
+        <aside class="work-intro">
+          <h1>Work that<br /><em>works.</em></h1>
+          <div class="preview-frame"><img id="project-preview" src="./assets/feed.jpg" alt="SAFY 프로젝트 화면" /></div>
+          <p>SAFY · URBAN SAFETY PLATFORM</p>
+        </aside>
+        <div class="work-list">
+          <article class="work-row active" data-image="./assets/feed.jpg">
+            <span>01/</span><div><h2>Risk Engine</h2><p>100m 격자 위험도 엔진</p></div><small>DOMAIN / GEO · 2026</small><i>↗</i>
+          </article>
+          <article class="work-row" data-image="./assets/report.jpg">
+            <span>02/</span><div><h2>State History</h2><p>변경된 셀만 기록하는 이력</p></div><small>DATA / POLICY · 2026</small><i>↗</i>
+          </article>
+          <article class="work-row" data-image="./assets/live.jpg">
+            <span>03/</span><div><h2>Latency</h2><p>반영 지연을 세 계층으로 분해</p></div><small>CACHE / SCHEDULER · 2026</small><i>↗</i>
+          </article>
+          <article class="work-row" data-image="./assets/report.jpg">
+            <span>04/</span><div><h2>Idempotency</h2><p>20번 요청에도 한 번만 처리</p></div><small>ATOMIC CLAIM · 2026</small><i>↗</i>
+          </article>
+          <article class="work-row" data-image="./assets/feed.jpg">
+            <span>05/</span><div><h2>Web Push</h2><p>실패를 상태로 남기는 발송</p></div><small>LIFECYCLE / RETRY · 2026</small><i>↗</i>
+          </article>
+          <div class="work-end">BACKEND · SYSTEMS · OPERATIONS · EVIDENCE <span>( DESIGNED, BUILT, VERIFIED )</span></div>
+        </div>
       </div>
     </section>
 
-    <section class="decisions" id="decisions">
-      <header class="section-head"><p><span>02</span> — ENGINEERING DECISIONS</p><p>DESIGN / OPERATE / VERIFY</p></header>
-      <div class="decision-intro"><h2>작은 결정이<br />운영의 모양을<br />바꿉니다.</h2><p>기능의 나열 대신, 어떤 경계를 정했고 실패를 어떻게 다뤘는지 보여드립니다.</p></div>
-      <div class="decision-list">
-        <article class="case reveal"><span class="case-no">01</span><div><small>GRID BOUNDARY</small><h3>100m 격자 위험도 엔진</h3></div><p>Java와 TypeScript가 동일한 좌표를 같은 셀로 해석하도록 IEEE-754 연산 순서와 음수 인덱스 규칙을 값 객체에 고정했습니다.</p><strong>ONE CELL<br />ONE RESULT</strong></article>
-        <article class="case reveal"><span class="case-no">02</span><div><small>STATE HISTORY</small><h3>바뀐 셀만 기록</h3></div><p>최근 제보, 공공데이터, 직전 활성 셀을 평가하되 변화가 생긴 셀만 이력으로 남겼습니다.</p><strong><del>3.25M</del><br /><b>≈ 100K / DAY</b></strong></article>
-        <article class="case reveal"><span class="case-no">03</span><div><small>LATENCY</small><h3>지연을 세 계층으로 분해</h3></div><p>스케줄러의 현재 분 제외, HTTP 캐시, 프론트 갱신 주기를 각각 측정하고 따로 줄였습니다.</p><strong><del>≈ 7 MIN</del><br /><b>3M 20S</b></strong></article>
-        <article class="case reveal"><span class="case-no">04</span><div><small>IDEMPOTENCY</small><h3>20번 와도 한 번만</h3></div><p>원자적 claim과 요청 fingerprint를 결합해 동일 본문은 결과를 재사용하고 다른 본문은 409로 분리했습니다.</p><strong><del>20 REQUESTS</del><br /><b>1 EVENT</b></strong></article>
-        <article class="case reveal"><span class="case-no">05</span><div><small>WEB PUSH</small><h3>실패를 상태로 남기기</h3></div><p>4xx는 종료하고 429만 재시도합니다. 중단 작업 회수부터 만료까지 하나의 수명주기로 정리했습니다.</p><strong>PENDING →<br /><b>COMPLETED</b></strong></article>
+    <section class="case-study">
+      <div class="section-label dark"><span>02</span><i>—</i><b>ENGINEERING NOTES</b></div>
+      <div class="case-title reveal"><p>ONE PROJECT, FIVE DECISIONS</p><h2>Not just what shipped.<br /><em>Why it holds.</em></h2></div>
+      <div class="notes">
+        <article class="note reveal"><span>01</span><h3>하나의 좌표,<br />하나의 셀</h3><p>IEEE-754 연산 순서와 음수 인덱스 규칙을 값 객체에 고정해 Java와 TypeScript의 해석을 일치시켰습니다.</p><strong>NO_DATA / MAX_SCORE / PURE DOMAIN</strong></article>
+        <article class="note reveal"><span>02</span><h3>325만 행에서<br />약 10만 행으로</h3><p>모든 셀의 스냅샷 대신 값이 바뀐 셀만 기록해 위험의 시작과 종료는 보존하면서 이력 폭증을 막았습니다.</p><strong>≈ 97% FEWER HISTORY ROWS</strong></article>
+        <article class="note reveal"><span>03</span><h3>7분에서<br />3분 20초로</h3><p>시간 창, HTTP 캐시, 프론트 갱신을 분리해 측정하고 승인 이벤트 계산과 짧은 캐시 정책을 적용했습니다.</p><strong>SCHEDULER / CACHE / CLIENT</strong></article>
+        <article class="note reveal"><span>04</span><h3>20 requests,<br />1 event</h3><p>PostgreSQL 원자적 claim과 요청 fingerprint로 동시 재시도에서도 정확히 한 번의 결과만 만들었습니다.</p><strong>ATOMIC CLAIM / FINGERPRINT / 409</strong></article>
       </div>
     </section>
 
-    <section class="system">
-      <header class="section-head light"><p><span>03</span> — SYSTEM BEHAVIOR</p><p>STATE IS A PRODUCT FEATURE</p></header>
-      <div class="system-copy"><p>WEB PUSH DELIVERY</p><h2>Every failure<br />has <i>a state.</i></h2></div>
-      <div class="state-flow" aria-label="Web Push 상태 전이"><div><span>01</span><strong>PENDING</strong><small>발송 대기</small></div><i>→</i><div><span>02</span><strong>PROCESSING</strong><small>worker claim</small></div><i>→</i><div><span>03</span><strong>COMPLETED</strong><small>발송 완료</small></div><i>↘</i><div class="accent"><span>04</span><strong>RETRY_WAIT</strong><small>429 / recoverable</small></div></div>
-      <div class="system-foot"><p>5회 / 10분</p><span>→</span><p><b>8회 / 4.2시간</b></p><small>운영 가능한 재시도 창으로 확장</small></div>
+    <section class="system" id="system">
+      <div class="section-label"><span>03</span><i>—</i><b>STATE LIFECYCLE</b></div>
+      <div class="system-head reveal"><h2>Every failure<br />has <em>a state.</em></h2><p>성공만 기록하는 시스템은 운영 중인 시스템을 설명하지 못합니다. 재시도와 회수, 종료 조건을 상태 전이로 명시했습니다.</p></div>
+      <div class="flow">
+        <article class="reveal"><span>01</span><h3>PENDING</h3><p>발송 대기</p></article><i>→</i>
+        <article class="reveal"><span>02</span><h3>PROCESSING</h3><p>worker atomic claim</p></article><i>→</i>
+        <article class="reveal"><span>03</span><h3>COMPLETED</h3><p>발송 완료</p></article><i>↘</i>
+        <article class="retry reveal"><span>04</span><h3>RETRY_WAIT</h3><p>429 / recoverable</p></article>
+      </div>
+      <div class="retry-window"><span>BEFORE — 5 TIMES / 10 MIN</span><i>→</i><b>AFTER — 8 TIMES / 4.2 HOURS</b></div>
     </section>
 
     <section class="about" id="about">
-      <header class="section-head"><p><span>04</span> — ABOUT</p><p>BOUNDARY / STATE / OPERATION / EVIDENCE</p></header>
-      <div class="about-grid"><div class="about-title"><p>MY APPROACH</p><h2>설명할 수 있는<br />시스템을 만듭니다.</h2></div><div class="about-body"><p>문제의 원인을 특정 계층에 단정하지 않습니다. 데이터, 시간, 캐시, 상태 전이를 나누어 실제 병목과 실패 지점을 찾습니다.</p><p>구현만 끝내지 않습니다. 동시성 테스트와 측정 기준, 보존 정책을 남겨 다음 사람도 시스템을 설명할 수 있게 합니다.</p></div></div>
-      <div class="principles"><article><span>01</span><h3>BOUNDARY</h3><p>각 계층이 자기 판단만 갖도록 경계를 분명히 합니다.</p></article><article><span>02</span><h3>STATE</h3><p>성공과 실패가 모두 데이터로 설명되게 합니다.</p></article><article><span>03</span><h3>OPERATION</h3><p>재시도와 회수, 만료를 먼저 모델링합니다.</p></article><article><span>04</span><h3>EVIDENCE</h3><p>조건을 분리하고 결과를 숫자로 검증합니다.</p></article></div>
+      <div class="section-label dark"><span>04</span><i>—</i><b>APPROACH</b></div>
+      <div class="about-copy reveal"><p>BACKEND, WITH CONTEXT</p><h2>복잡한 흐름을<br />작은 결정으로<br /><em>나눕니다.</em></h2></div>
+      <div class="principles">
+        <article><span>01</span><h3>Boundary</h3><p>각 계층이 자기 판단만 갖도록 경계를 분명히 합니다.</p></article>
+        <article><span>02</span><h3>State</h3><p>성공과 실패가 모두 데이터로 설명되게 합니다.</p></article>
+        <article><span>03</span><h3>Operation</h3><p>재시도와 회수, 만료를 먼저 모델링합니다.</p></article>
+        <article><span>04</span><h3>Evidence</h3><p>조건을 분리하고 결과를 숫자로 검증합니다.</p></article>
+      </div>
       <div class="stack"><span>JAVA 21</span><span>SPRING BOOT 4.1</span><span>POSTGRESQL</span><span>REDIS</span><span>REACT 19</span></div>
     </section>
   </main>
-  <footer>
-    <div class="footer-top"><span>05 — CONTACT</span><span>AVAILABLE FOR BACKEND OPPORTUNITIES</span></div>
-    <p>Have a system<br />worth making <i>reliable?</i></p>
-    <a class="mail" href="mailto:ekgmljeong@naver.com">ekgmljeong@naver.com <span>↗</span></a>
+
+  <footer id="contact">
+    <div class="section-label"><span>05</span><i>—</i><b>SAY HI ANYTIME</b></div>
+    <div class="contact-copy"><h2>Bring me the<br /><em>hard one.</em></h2><p>실패 뒤에도 설명되는 백엔드가 필요하다면 이야기해 주세요.</p></div>
+    <a class="mail" href="mailto:ekgmljeong@naver.com"><span>EKGMLJEONG@NAVER.COM</span><i>↗</i></a>
     <div class="footer-bottom"><span>© 2026 JEONG DAHEE</span><a href="https://github.com/da2dla/portfolio" target="_blank" rel="noreferrer">GITHUB ↗</a><a href="#top">BACK TO TOP ↑</a></div>
   </footer>
   <div class="progress" aria-hidden="true"></div>
