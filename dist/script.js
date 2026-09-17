@@ -6,7 +6,6 @@ const heroWord = document.querySelector('.hero-word');
 const impossible = document.querySelector('.impossible');
 const reveals = document.querySelectorAll('.reveal');
 const workRows = document.querySelectorAll('.work-row');
-const techVisuals = document.querySelectorAll('.tech-visual');
 const menu = document.querySelector('.menu');
 const nav = document.querySelector('.topbar nav');
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -29,10 +28,14 @@ const revealObserver = new IntersectionObserver((entries) => {
 reveals.forEach((element) => revealObserver.observe(element));
 
 const setPreview = (row) => {
-  if (row.classList.contains('active')) return;
-  workRows.forEach((item) => item.classList.remove('active'));
+  const project = row.closest('.work-grid');
+  const projectRows = project.querySelectorAll('.work-row');
+  const projectVisuals = project.querySelectorAll('.tech-visual');
+  const targetVisual = project.querySelector(`.tech-visual[data-visual="${row.dataset.visual}"]`);
+  if (row.classList.contains('active') && targetVisual?.classList.contains('active')) return;
+  projectRows.forEach((item) => item.classList.remove('active'));
   row.classList.add('active');
-  techVisuals.forEach((visual) => {
+  projectVisuals.forEach((visual) => {
     visual.classList.toggle('active', visual.dataset.visual === row.dataset.visual);
   });
 };

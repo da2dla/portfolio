@@ -38,8 +38,45 @@
     </section>
 
     <section class="work" id="work">
-      <div class="section-label"><span>01</span><i>—</i><b>SELECTED WORK</b></div>
-      <div class="work-grid">
+      <div class="section-label"><span>01</span><i>—</i><b>SELECTED WORK · 02 PROJECTS</b></div>
+      <div class="project-banner"><span>PROJECT 01</span><b>TRIPOOM</b><p>2026.05—2026.06 · 2-PERSON TEAM · FULL-STACK · COMPLETED</p></div>
+      <div class="work-grid tripoom-project">
+        <aside class="work-intro">
+          <h1>Systems that<br /><em>recover.</em></h1>
+          <div class="preview-frame" aria-live="polite">
+            <div class="tech-visual outbox-visual active" data-visual="trip-outbox" aria-label="트랜잭셔널 아웃박스 파이프라인 시각화">
+              <div class="visual-top"><span>TRANSACTIONAL_OUTBOX / MYSQL</span><b>AT-LEAST-ONCE</b></div>
+              <div class="outbox-pipeline"><div><span>01</span><b>NOTIFICATION</b></div><i>+</i><div class="blue-node"><span>02</span><b>OUTBOX</b></div><i>→</i><div><span>03</span><b>WORKER</b></div><i>→</i><div><span>04</span><b>WEB PUSH</b></div></div>
+              <div class="visual-bottom"><span>ONE DB TRANSACTION</span><strong>RECOVERABLE INTENT</strong></div>
+            </div>
+            <div class="tech-visual worker-visual" data-visual="trip-worker" aria-label="4개 워커의 중복 없는 작업 분배 시각화">
+              <div class="visual-top"><span>WORKER_CLAIM / SKIP LOCKED</span><b>30,000 VERIFIED</b></div>
+              <div class="worker-board"><div><b>W1</b><i></i><i></i><i></i><i></i><i></i></div><div><b>W2</b><i></i><i></i><i></i><i></i><i></i></div><div><b>W3</b><i></i><i></i><i></i><i></i><i></i></div><div><b>W4</b><i></i><i></i><i></i><i></i><i></i></div></div>
+              <div class="visual-bottom"><span>WITHOUT LOCK +2,880 DUPLICATES</span><strong>0 DUP / 0 REMAIN</strong></div>
+            </div>
+            <div class="tech-visual ai-visual" data-visual="trip-ai" aria-label="결정적 계산과 LLM 문장 생성을 분리한 시각화">
+              <div class="visual-top"><span>AI_REPORT / RESPONSIBILITY</span><b>1 CALL</b></div>
+              <div class="ai-boundary"><div><span>SERVER</span><b>STATUS<br />BUDGET<br />FINGERPRINT</b></div><i>→</i><div class="blue-node"><span>LLM</span><b>WORDS<br />ONLY</b></div><i>→</i><div><span>OUTPUT</span><b>3 INSIGHTS</b></div></div>
+              <div class="visual-bottom"><span>20 READS / 2 CHANGES</span><strong>85% CALLS SKIPPED*</strong></div>
+            </div>
+            <div class="tech-visual exchange-visual" data-visual="trip-exchange" aria-label="서로 다른 환율 형식의 정규화 시각화">
+              <div class="visual-top"><span>EXCHANGE_RATE / NORMALIZATION</span><b>1 FX = KRW</b></div>
+              <div class="exchange-flow"><div><span>KOREA EXIM</span><b>JPY(100)<br />945.56</b></div><div><span>FRANKFURTER</span><b>1 KRW<br />= X USD</b></div><i>→</i><div class="normalize"><span>NORMALIZE</span><b>÷ 100<br />1 ÷ X</b></div><i>→</i><div class="blue-node"><span>INTERNAL</span><b>1 FX<br />= KRW</b></div></div>
+              <div class="visual-bottom"><span>PROVIDER DIFFERENCES ABSORBED</span><strong>STABLE INTERNAL MODEL</strong></div>
+            </div>
+          </div>
+          <p>TRIPOOM · SMART TRAVEL BUDGET</p>
+        </aside>
+        <div class="work-list">
+          <article class="work-row active" data-visual="trip-outbox" tabindex="0"><span>01/</span><div><h2>Outbox</h2><p>알림과 발송 의도를 하나의 트랜잭션에</p></div><small>MYSQL / WEB PUSH · 2026</small><i>↗</i></article>
+          <article class="work-row" data-visual="trip-worker" tabindex="0"><span>02/</span><div><h2>Worker Claim</h2><p>4개 Worker의 중복 없는 선점</p></div><small>SKIP LOCKED · 2026</small><i>↗</i></article>
+          <article class="work-row" data-visual="trip-ai" tabindex="0"><span>03/</span><div><h2>AI Reports</h2><p>계산과 생성을 분리한 소비 리포트</p></div><small>STRUCTURED OUTPUT · 2026</small><i>↗</i></article>
+          <article class="work-row" data-visual="trip-exchange" tabindex="0"><span>04/</span><div><h2>FX Boundary</h2><p>외부 환율 차이를 경계에서 정규화</p></div><small>EXTERNAL API · 2026</small><i>↗</i></article>
+          <div class="work-end">JAVA 21 · SPRING BOOT 3 · MYSQL · LLM <span>( FULL-STACK / PRIVATE REPOSITORY )</span></div>
+        </div>
+      </div>
+      <div class="project-banner"><span>PROJECT 02</span><b>SAFY</b><p>2026 · BACKEND-LED · URBAN SAFETY PLATFORM</p></div>
+      <div class="work-grid safy-project">
         <aside class="work-intro">
           <h1>Work that<br /><em>works.</em></h1>
           <div class="preview-frame" aria-live="polite">
@@ -93,26 +130,26 @@
     </section>
 
     <section class="case-study">
-      <div class="section-label dark"><span>02</span><i>—</i><b>ENGINEERING NOTES</b></div>
-      <div class="case-title reveal"><p>ONE PROJECT, FIVE DECISIONS</p><h2>Not just what shipped.<br /><em>Why it holds.</em></h2></div>
+      <div class="section-label dark"><span>02</span><i>—</i><b>TRIPOOM · ENGINEERING NOTES</b></div>
+      <div class="case-title reveal"><p>ONE PIPELINE, FOUR PROOFS</p><h2>Not just what shipped.<br /><em>Why it recovers.</em></h2></div>
       <div class="notes">
-        <article class="note reveal"><span>01</span><h3>하나의 좌표,<br />하나의 셀</h3><p>IEEE-754 연산 순서와 음수 인덱스 규칙을 값 객체에 고정해 Java와 TypeScript의 해석을 일치시켰습니다.</p><strong>NO_DATA / MAX_SCORE / PURE DOMAIN</strong></article>
-        <article class="note reveal"><span>02</span><h3>325만 행에서<br />약 10만 행으로</h3><p>모든 셀의 스냅샷 대신 값이 바뀐 셀만 기록해 위험의 시작과 종료는 보존하면서 이력 폭증을 막았습니다.</p><strong>≈ 97% FEWER HISTORY ROWS</strong></article>
-        <article class="note reveal"><span>03</span><h3>7분에서<br />3분 20초로</h3><p>시간 창, HTTP 캐시, 프론트 갱신을 분리해 측정하고 승인 이벤트 계산과 짧은 캐시 정책을 적용했습니다.</p><strong>SCHEDULER / CACHE / CLIENT</strong></article>
-        <article class="note reveal"><span>04</span><h3>20 requests,<br />1 event</h3><p>PostgreSQL 원자적 claim과 요청 fingerprint로 동시 재시도에서도 정확히 한 번의 결과만 만들었습니다.</p><strong>ATOMIC CLAIM / FINGERPRINT / 409</strong></article>
+        <article class="note reveal"><span>01</span><h3>발송 전에<br />서버가 멈춘다면</h3><p>알림과 발송 의도를 같은 MySQL 트랜잭션에 저장해 커밋 이후 장애에도 처리할 작업이 남도록 구성했습니다.</p><strong>NOTIFICATION + OUTBOX / ONE COMMIT</strong></article>
+        <article class="note reveal"><span>02</span><h3>브로커도 DB와<br />원자적이지 않다</h3><p>Kafka와 RabbitMQ에 장애를 주입해 DB 또는 브로커 한쪽에만 데이터가 남는 이중 쓰기 문제를 직접 재현했습니다.</p><strong>2 BROKERS / 2 FAILURE WINDOWS</strong></article>
+        <article class="note reveal"><span>03</span><h3>30,000건,<br />중복 0건</h3><p>4개 Worker가 회차당 1,000건을 처리하는 실험을 30회 반복해 중복 선점·중복 처리·미처리 0건을 확인했습니다.</p><strong>FOR UPDATE SKIP LOCKED</strong></article>
+        <article class="note reveal"><span>04</span><h3>Exactly-once가 아닌<br />At-least-once</h3><p>외부 발송 성공 직후 장애 가능성을 인정하고 상태 가드, 중복 방지 키, 재시도와 실패 종료 조건을 함께 설계했습니다.</p><strong>RETRY / IDEMPOTENCY / RECOVERY</strong></article>
       </div>
     </section>
 
     <section class="system" id="system">
-      <div class="section-label"><span>03</span><i>—</i><b>STATE LIFECYCLE</b></div>
+      <div class="section-label"><span>03</span><i>—</i><b>TRIPOOM · OUTBOX LIFECYCLE</b></div>
       <div class="system-head reveal"><h2>Every failure<br />has <em>a state.</em></h2><p>성공만 기록하는 시스템은 운영 중인 시스템을 설명하지 못합니다. 재시도와 회수, 종료 조건을 상태 전이로 명시했습니다.</p></div>
       <div class="flow">
         <article class="reveal"><span>01</span><h3>PENDING</h3><p>발송 대기</p></article><i>→</i>
         <article class="reveal"><span>02</span><h3>PROCESSING</h3><p>worker atomic claim</p></article><i>→</i>
-        <article class="reveal"><span>03</span><h3>COMPLETED</h3><p>발송 완료</p></article><i>↘</i>
-        <article class="retry reveal"><span>04</span><h3>RETRY_WAIT</h3><p>429 / recoverable</p></article>
+        <article class="reveal"><span>03</span><h3>PROCESSED</h3><p>Delivery 생성 완료</p></article><i>↘</i>
+        <article class="retry reveal"><span>04</span><h3>RETRY_PENDING</h3><p>일시 실패 / 재시도</p></article>
       </div>
-      <div class="retry-window"><span>BEFORE — 5 TIMES / 10 MIN</span><i>→</i><b>AFTER — 8 TIMES / 4.2 HOURS</b></div>
+      <div class="retry-window"><span>4 WORKERS / 30 ROUNDS</span><i>→</i><b>30,000 PROCESSED / 0 DUPLICATES</b></div>
     </section>
 
     <section class="about" id="about">
