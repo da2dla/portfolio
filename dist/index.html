@@ -3,170 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="정다희 백엔드 엔지니어 포트폴리오 — 실패 이후의 상태까지 설계합니다." />
+  <meta name="description" content="정다희 백엔드 엔지니어 포트폴리오 — 프로젝트 목록" />
   <meta name="theme-color" content="#f2f2f0" />
   <link rel="stylesheet" href="./styles.css" />
   <title>Jeong Dahee — Backend Engineer</title>
 </head>
-<body>
-  <a class="skip" href="#main">본문으로 바로가기</a>
+<body class="home-page">
+  <a class="skip" href="#projects">프로젝트로 바로가기</a>
   <div class="loader" aria-hidden="true"><span>DAHEE.JEONG</span><i></i></div>
   <header class="topbar">
-    <a class="brand" href="#top">dahee<sup>®</sup></a>
-    <nav aria-label="주요 메뉴">
-      <a href="#work">/WORK</a><a href="#system">/SYSTEM</a><a href="#about">/ABOUT</a><a href="#contact">/CONTACT</a>
-    </nav>
+    <a class="brand" href="./index.html">dahee<sup>®</sup></a>
+    <nav aria-label="주요 메뉴"><a href="#projects">/WORK</a><a href="#about">/ABOUT</a><a href="#contact">/CONTACT</a></nav>
     <button class="menu" type="button" aria-expanded="false">/MENU</button>
   </header>
-
   <main id="main">
     <section class="hero" id="top">
       <div class="hero-word" aria-label="Reliable"><span>RE</span><b>LIABLE</b></div>
       <div class="impossible" aria-hidden="true">
-        <svg viewBox="0 0 200 180" role="presentation">
-          <defs><filter id="shadow"><feDropShadow dx="11" dy="15" stdDeviation="4" flood-opacity=".22" /></filter></defs>
-          <g filter="url(#shadow)">
-            <polygon points="100,10 190,160 156,160 83,38" fill="#25262a" />
-            <polygon points="190,160 20,160 38,130 156,130" fill="#0d0d0f" />
-            <polygon points="20,160 100,10 117,39 52,160" fill="#151518" />
-            <polygon points="83,38 100,67 65,130 38,130" fill="#35363b" />
-          </g>
-        </svg>
+        <svg viewBox="0 0 200 180" role="presentation"><defs><filter id="shadow"><feDropShadow dx="11" dy="15" stdDeviation="4" flood-opacity=".22" /></filter></defs><g filter="url(#shadow)"><polygon points="100,10 190,160 156,160 83,38" fill="#25262a"/><polygon points="190,160 20,160 38,130 156,130" fill="#0d0d0f"/><polygon points="20,160 100,10 117,39 52,160" fill="#151518"/><polygon points="83,38 100,67 65,130 38,130" fill="#35363b"/></g></svg>
       </div>
       <div class="hero-statement"><p>정상 흐름을 구현하는 데서 멈추지 않습니다.</p><em>실패 뒤에 남는 상태까지 설계합니다.</em></div>
-      <div class="hero-meta"><span>BACKEND ENGINEER · SEOUL</span><span>JAVA / SPRING / POSTGRESQL</span><a href="#work">SCROLL TO INSPECT ↓</a></div>
+      <div class="hero-meta"><span>BACKEND ENGINEER · SEOUL</span><span>JAVA / SPRING / DATABASE</span><a href="#projects">SELECTED WORK ↓</a></div>
     </section>
 
-    <section class="work" id="work">
-      <div class="section-label"><span>01</span><i>—</i><b>SELECTED WORK · 02 PROJECTS</b></div>
-      <div class="project-banner"><span>PROJECT 01</span><b>TRIPOOM</b><p>2026.05—2026.06 · 2-PERSON TEAM · FULL-STACK · COMPLETED</p></div>
-      <div class="work-grid tripoom-project">
-        <aside class="work-intro">
-          <h1>Systems that<br /><em>recover.</em></h1>
-          <div class="preview-frame" aria-live="polite">
-            <div class="tech-visual outbox-visual active" data-visual="trip-outbox" aria-label="트랜잭셔널 아웃박스 파이프라인 시각화">
-              <div class="visual-top"><span>TRANSACTIONAL_OUTBOX / MYSQL</span><b>AT-LEAST-ONCE</b></div>
-              <div class="outbox-pipeline"><div><span>01</span><b>NOTIFICATION</b></div><i>+</i><div class="blue-node"><span>02</span><b>OUTBOX</b></div><i>→</i><div><span>03</span><b>WORKER</b></div><i>→</i><div><span>04</span><b>WEB PUSH</b></div></div>
-              <div class="visual-bottom"><span>ONE DB TRANSACTION</span><strong>RECOVERABLE INTENT</strong></div>
-            </div>
-            <div class="tech-visual worker-visual" data-visual="trip-worker" aria-label="4개 워커의 중복 없는 작업 분배 시각화">
-              <div class="visual-top"><span>WORKER_CLAIM / SKIP LOCKED</span><b>30,000 VERIFIED</b></div>
-              <div class="worker-board"><div><b>W1</b><i></i><i></i><i></i><i></i><i></i></div><div><b>W2</b><i></i><i></i><i></i><i></i><i></i></div><div><b>W3</b><i></i><i></i><i></i><i></i><i></i></div><div><b>W4</b><i></i><i></i><i></i><i></i><i></i></div></div>
-              <div class="visual-bottom"><span>WITHOUT LOCK +2,880 DUPLICATES</span><strong>0 DUP / 0 REMAIN</strong></div>
-            </div>
-            <div class="tech-visual ai-visual" data-visual="trip-ai" aria-label="결정적 계산과 LLM 문장 생성을 분리한 시각화">
-              <div class="visual-top"><span>AI_REPORT / RESPONSIBILITY</span><b>1 CALL</b></div>
-              <div class="ai-boundary"><div><span>SERVER</span><b>STATUS<br />BUDGET<br />FINGERPRINT</b></div><i>→</i><div class="blue-node"><span>LLM</span><b>WORDS<br />ONLY</b></div><i>→</i><div><span>OUTPUT</span><b>3 INSIGHTS</b></div></div>
-              <div class="visual-bottom"><span>20 READS / 2 CHANGES</span><strong>85% CALLS SKIPPED*</strong></div>
-            </div>
-            <div class="tech-visual exchange-visual" data-visual="trip-exchange" aria-label="서로 다른 환율 형식의 정규화 시각화">
-              <div class="visual-top"><span>EXCHANGE_RATE / NORMALIZATION</span><b>1 FX = KRW</b></div>
-              <div class="exchange-flow"><div><span>KOREA EXIM</span><b>JPY(100)<br />945.56</b></div><div><span>FRANKFURTER</span><b>1 KRW<br />= X USD</b></div><i>→</i><div class="normalize"><span>NORMALIZE</span><b>÷ 100<br />1 ÷ X</b></div><i>→</i><div class="blue-node"><span>INTERNAL</span><b>1 FX<br />= KRW</b></div></div>
-              <div class="visual-bottom"><span>PROVIDER DIFFERENCES ABSORBED</span><strong>STABLE INTERNAL MODEL</strong></div>
-            </div>
-          </div>
-          <p>TRIPOOM · SMART TRAVEL BUDGET</p>
-        </aside>
-        <div class="work-list">
-          <article class="work-row active" data-visual="trip-outbox" tabindex="0"><span>01/</span><div><h2>Outbox</h2><p>알림과 발송 의도를 하나의 트랜잭션에</p></div><small>MYSQL / WEB PUSH · 2026</small><i>↗</i></article>
-          <article class="work-row" data-visual="trip-worker" tabindex="0"><span>02/</span><div><h2>Worker Claim</h2><p>4개 Worker의 중복 없는 선점</p></div><small>SKIP LOCKED · 2026</small><i>↗</i></article>
-          <article class="work-row" data-visual="trip-ai" tabindex="0"><span>03/</span><div><h2>AI Reports</h2><p>계산과 생성을 분리한 소비 리포트</p></div><small>STRUCTURED OUTPUT · 2026</small><i>↗</i></article>
-          <article class="work-row" data-visual="trip-exchange" tabindex="0"><span>04/</span><div><h2>FX Boundary</h2><p>외부 환율 차이를 경계에서 정규화</p></div><small>EXTERNAL API · 2026</small><i>↗</i></article>
-          <div class="work-end">JAVA 21 · SPRING BOOT 3 · MYSQL · LLM <span>( FULL-STACK / PRIVATE REPOSITORY )</span></div>
-        </div>
-      </div>
-      <div class="project-banner"><span>PROJECT 02</span><b>SAFY</b><p>2026 · BACKEND-LED · URBAN SAFETY PLATFORM</p></div>
-      <div class="work-grid safy-project">
-        <aside class="work-intro">
+    <section class="home-work" id="projects">
+      <div class="section-label"><span>01</span><i>—</i><b>SELECTED WORK</b></div>
+      <div class="home-work-grid">
+        <aside class="home-work-intro">
           <h1>Work that<br /><em>works.</em></h1>
-          <div class="preview-frame" aria-live="polite">
-            <div class="tech-visual risk-visual active" data-visual="risk" aria-label="100미터 위험도 격자 시각화">
-              <div class="visual-top"><span>RISK_GRID / 100M</span><b>LIVE</b></div>
-              <div class="risk-map"><i style="--x:2;--y:2;--d:.1s"></i><i style="--x:3;--y:2;--d:.3s"></i><i style="--x:6;--y:3;--d:.5s"></i><i style="--x:7;--y:4;--d:.7s"></i><i style="--x:4;--y:5;--d:.9s"></i><span class="coord">37.5012 N / 127.0396 E</span></div>
-              <div class="visual-bottom"><span>CELL_37_127</span><strong>SCORE 84</strong></div>
-            </div>
-            <div class="tech-visual history-visual" data-visual="history" aria-label="변경된 데이터 행만 남는 이력 시각화">
-              <div class="visual-top"><span>STATE_HISTORY / DIFF</span><b>−96.9%</b></div>
-              <div class="history-table"><i></i><i></i><i class="changed"></i><i></i><i></i><i class="changed"></i><i></i><i></i><i></i><i class="changed"></i></div>
-              <div class="history-count"><span>3,250,000</span><i>→</i><strong>≈100,000 / DAY</strong></div>
-            </div>
-            <div class="tech-visual latency-visual" data-visual="latency" aria-label="처리 지연 타임라인 시각화">
-              <div class="visual-top"><span>EVENT_LATENCY / TRACE</span><b>03:20</b></div>
-              <div class="latency-track"><i></i><div><span>01</span><b>REPORT</b></div><div><span>02</span><b>SCHEDULER</b></div><div><span>03</span><b>CACHE</b></div><div><span>04</span><b>CLIENT</b></div></div>
-              <div class="visual-bottom"><span><s>07:00</s> BEFORE</span><strong>03:20 NOW</strong></div>
-            </div>
-            <div class="tech-visual idempotency-visual" data-visual="idempotency" aria-label="20개 동시 요청이 하나의 이벤트로 수렴하는 시각화">
-              <div class="visual-top"><span>IDEMPOTENCY / CONCURRENT</span><b>20 → 1</b></div>
-              <svg viewBox="0 0 600 270" role="presentation"><g class="request-lines"><path d="M20 20 L470 135"/><path d="M20 32 L470 135"/><path d="M20 44 L470 135"/><path d="M20 56 L470 135"/><path d="M20 68 L470 135"/><path d="M20 80 L470 135"/><path d="M20 92 L470 135"/><path d="M20 104 L470 135"/><path d="M20 116 L470 135"/><path d="M20 128 L470 135"/><path d="M20 140 L470 135"/><path d="M20 152 L470 135"/><path d="M20 164 L470 135"/><path d="M20 176 L470 135"/><path d="M20 188 L470 135"/><path d="M20 200 L470 135"/><path d="M20 212 L470 135"/><path d="M20 224 L470 135"/><path d="M20 236 L470 135"/><path d="M20 248 L470 135"/></g><circle cx="470" cy="135" r="20"/><path class="output-line" d="M490 135 H580"/></svg>
-              <div class="visual-bottom"><span>20 REQUESTS</span><strong>1 EVENT</strong></div>
-            </div>
-            <div class="tech-visual push-visual" data-visual="push" aria-label="웹 푸시 상태 전이 시각화">
-              <div class="visual-top"><span>WEB_PUSH / LIFECYCLE</span><b>RETRYABLE</b></div>
-              <div class="push-flow"><div><span>01</span><b>PENDING</b></div><i>→</i><div><span>02</span><b>PROCESSING</b></div><i>→</i><div><span>03</span><b>COMPLETED</b></div><em></em><div class="retry-node"><span>04</span><b>RETRY_WAIT</b></div></div>
-              <div class="visual-bottom"><span>4XX TERMINATE</span><strong>429 RETRY</strong></div>
-            </div>
+          <div class="home-preview" aria-hidden="true">
+            <div class="home-visual tripoom-home active" data-project-preview="tripoom"><div class="mini-pipeline"><i></i><span>DB</span><b>OUTBOX</b><span>W1—W4</span><span>PUSH</span></div><p>30,000 PROCESSED<br /><strong>0 DUPLICATES</strong></p></div>
+            <div class="home-visual safy-home" data-project-preview="safy"><div class="mini-grid"><i></i><i></i><i></i><i></i><i></i></div><p>100M RISK GRID<br /><strong>STATE / LATENCY / PUSH</strong></p></div>
           </div>
-          <p>SAFY · URBAN SAFETY PLATFORM</p>
+          <small>SELECT A PROJECT TO INSPECT →</small>
         </aside>
-        <div class="work-list">
-          <article class="work-row active" data-visual="risk" tabindex="0">
-            <span>01/</span><div><h2>Risk Engine</h2><p>100m 격자 위험도 엔진</p></div><small>DOMAIN / GEO · 2026</small><i>↗</i>
-          </article>
-          <article class="work-row" data-visual="history" tabindex="0">
-            <span>02/</span><div><h2>State History</h2><p>변경된 셀만 기록하는 이력</p></div><small>DATA / POLICY · 2026</small><i>↗</i>
-          </article>
-          <article class="work-row" data-visual="latency" tabindex="0">
-            <span>03/</span><div><h2>Latency</h2><p>반영 지연을 세 계층으로 분해</p></div><small>CACHE / SCHEDULER · 2026</small><i>↗</i>
-          </article>
-          <article class="work-row" data-visual="idempotency" tabindex="0">
-            <span>04/</span><div><h2>Idempotency</h2><p>20번 요청에도 한 번만 처리</p></div><small>ATOMIC CLAIM · 2026</small><i>↗</i>
-          </article>
-          <article class="work-row" data-visual="push" tabindex="0">
-            <span>05/</span><div><h2>Web Push</h2><p>실패를 상태로 남기는 발송</p></div><small>LIFECYCLE / RETRY · 2026</small><i>↗</i>
-          </article>
-          <div class="work-end">BACKEND · SYSTEMS · OPERATIONS · EVIDENCE <span>( DESIGNED, BUILT, VERIFIED )</span></div>
+        <div class="project-index">
+          <a class="project-link active" href="./tripoom.html" data-project="tripoom">
+            <span>01/</span><div><h2>TripOOM</h2><p>다국가 지출·AI 리포트·복구 가능한 알림 파이프라인</p></div><small>FULL-STACK / 2026</small><i>↗</i>
+          </a>
+          <a class="project-link" href="./safy.html" data-project="safy">
+            <span>02/</span><div><h2>SAFY</h2><p>도시 안전 제보·100m 위험도·관제 업무 시스템</p></div><small>BACKEND-LED / 2026</small><i>↗</i>
+          </a>
+          <div class="project-index-foot">02 PROJECTS · 09 ENGINEERING DECISIONS <span>( CLICK TO OPEN CASE STUDY )</span></div>
         </div>
       </div>
     </section>
 
-    <section class="case-study">
-      <div class="section-label dark"><span>02</span><i>—</i><b>TRIPOOM · ENGINEERING NOTES</b></div>
-      <div class="case-title reveal"><p>ONE PIPELINE, FOUR PROOFS</p><h2>Not just what shipped.<br /><em>Why it recovers.</em></h2></div>
-      <div class="notes">
-        <article class="note reveal"><span>01</span><h3>발송 전에<br />서버가 멈춘다면</h3><p>알림과 발송 의도를 같은 MySQL 트랜잭션에 저장해 커밋 이후 장애에도 처리할 작업이 남도록 구성했습니다.</p><strong>NOTIFICATION + OUTBOX / ONE COMMIT</strong></article>
-        <article class="note reveal"><span>02</span><h3>브로커도 DB와<br />원자적이지 않다</h3><p>Kafka와 RabbitMQ에 장애를 주입해 DB 또는 브로커 한쪽에만 데이터가 남는 이중 쓰기 문제를 직접 재현했습니다.</p><strong>2 BROKERS / 2 FAILURE WINDOWS</strong></article>
-        <article class="note reveal"><span>03</span><h3>30,000건,<br />중복 0건</h3><p>4개 Worker가 회차당 1,000건을 처리하는 실험을 30회 반복해 중복 선점·중복 처리·미처리 0건을 확인했습니다.</p><strong>FOR UPDATE SKIP LOCKED</strong></article>
-        <article class="note reveal"><span>04</span><h3>Exactly-once가 아닌<br />At-least-once</h3><p>외부 발송 성공 직후 장애 가능성을 인정하고 상태 가드, 중복 방지 키, 재시도와 실패 종료 조건을 함께 설계했습니다.</p><strong>RETRY / IDEMPOTENCY / RECOVERY</strong></article>
-      </div>
-    </section>
-
-    <section class="system" id="system">
-      <div class="section-label"><span>03</span><i>—</i><b>TRIPOOM · OUTBOX LIFECYCLE</b></div>
-      <div class="system-head reveal"><h2>Every failure<br />has <em>a state.</em></h2><p>성공만 기록하는 시스템은 운영 중인 시스템을 설명하지 못합니다. 재시도와 회수, 종료 조건을 상태 전이로 명시했습니다.</p></div>
-      <div class="flow">
-        <article class="reveal"><span>01</span><h3>PENDING</h3><p>발송 대기</p></article><i>→</i>
-        <article class="reveal"><span>02</span><h3>PROCESSING</h3><p>worker atomic claim</p></article><i>→</i>
-        <article class="reveal"><span>03</span><h3>PROCESSED</h3><p>Delivery 생성 완료</p></article><i>↘</i>
-        <article class="retry reveal"><span>04</span><h3>RETRY_PENDING</h3><p>일시 실패 / 재시도</p></article>
-      </div>
-      <div class="retry-window"><span>4 WORKERS / 30 ROUNDS</span><i>→</i><b>30,000 PROCESSED / 0 DUPLICATES</b></div>
-    </section>
-
-    <section class="about" id="about">
-      <div class="section-label dark"><span>04</span><i>—</i><b>APPROACH</b></div>
+    <section class="home-about" id="about">
+      <div class="section-label dark"><span>02</span><i>—</i><b>APPROACH</b></div>
       <div class="about-copy reveal"><p>BACKEND, WITH CONTEXT</p><h2>복잡한 흐름을<br />작은 결정으로<br /><em>나눕니다.</em></h2></div>
-      <div class="principles">
-        <article><span>01</span><h3>Boundary</h3><p>각 계층이 자기 판단만 갖도록 경계를 분명히 합니다.</p></article>
-        <article><span>02</span><h3>State</h3><p>성공과 실패가 모두 데이터로 설명되게 합니다.</p></article>
-        <article><span>03</span><h3>Operation</h3><p>재시도와 회수, 만료를 먼저 모델링합니다.</p></article>
-        <article><span>04</span><h3>Evidence</h3><p>조건을 분리하고 결과를 숫자로 검증합니다.</p></article>
-      </div>
-      <div class="stack"><span>JAVA 21</span><span>SPRING BOOT 4.1</span><span>POSTGRESQL</span><span>REDIS</span><span>REACT 19</span></div>
+      <div class="principles"><article><span>01</span><h3>Boundary</h3><p>외부 시스템의 불규칙함을 경계에서 흡수합니다.</p></article><article><span>02</span><h3>State</h3><p>성공과 실패가 모두 데이터로 설명되게 합니다.</p></article><article><span>03</span><h3>Operation</h3><p>재시도와 회수, 만료를 먼저 모델링합니다.</p></article><article><span>04</span><h3>Evidence</h3><p>선택의 효과를 대조군과 반복 실험으로 확인합니다.</p></article></div>
+      <div class="stack"><span>JAVA 21</span><span>SPRING BOOT</span><span>MYSQL / POSTGRESQL</span><span>REDIS</span><span>REACT / VUE</span></div>
     </section>
   </main>
-
   <footer id="contact">
-    <div class="section-label"><span>05</span><i>—</i><b>SAY HI ANYTIME</b></div>
+    <div class="section-label"><span>03</span><i>—</i><b>SAY HI ANYTIME</b></div>
     <div class="contact-copy"><h2>Bring me the<br /><em>hard one.</em></h2><p>실패 뒤에도 설명되는 백엔드가 필요하다면 이야기해 주세요.</p></div>
     <a class="mail" href="mailto:ekgmljeong@naver.com"><span>EKGMLJEONG@NAVER.COM</span><i>↗</i></a>
     <div class="footer-bottom"><span>© 2026 JEONG DAHEE</span><a href="https://github.com/da2dla/portfolio" target="_blank" rel="noreferrer">GITHUB ↗</a><a href="#top">BACK TO TOP ↑</a></div>

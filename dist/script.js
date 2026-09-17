@@ -8,6 +8,8 @@ const reveals = document.querySelectorAll('.reveal');
 const workRows = document.querySelectorAll('.work-row');
 const menu = document.querySelector('.menu');
 const nav = document.querySelector('.topbar nav');
+const projectLinks = document.querySelectorAll('.project-link');
+const homeVisuals = document.querySelectorAll('.home-visual');
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 addEventListener('load', () => {
@@ -53,6 +55,16 @@ const rowObserver = new IntersectionObserver((entries) => {
 
 workRows.forEach((row) => rowObserver.observe(row));
 
+projectLinks.forEach((link) => {
+  const activate = () => {
+    projectLinks.forEach((item) => item.classList.remove('active'));
+    homeVisuals.forEach((visual) => visual.classList.toggle('active', visual.dataset.projectPreview === link.dataset.project));
+    link.classList.add('active');
+  };
+  link.addEventListener('mouseenter', activate);
+  link.addEventListener('focus', activate);
+});
+
 let pointerX = 0;
 let pointerY = 0;
 addEventListener('pointermove', (event) => {
@@ -64,7 +76,7 @@ const render = () => {
   const y = scrollY;
   const heroRatio = Math.min(y / Math.max(innerHeight, 1), 1);
   progress.style.transform = `scaleX(${y / Math.max(document.documentElement.scrollHeight - innerHeight, 1)})`;
-  if (!reducedMotion && heroRatio < 1) {
+  if (!reducedMotion && heroRatio < 1 && impossible && heroWord) {
     impossible.style.transform = `translate(-50%, calc(-50% + ${y * 0.08}px)) rotateX(${pointerY}deg) rotateY(${pointerX}deg) rotateZ(${-4 + heroRatio * 13}deg)`;
     heroWord.style.transform = `translate(calc(-50% - ${y * 0.035}px), calc(-50% + ${y * 0.04}px))`;
   }
@@ -73,7 +85,7 @@ const render = () => {
 
 requestAnimationFrame(render);
 
-menu.addEventListener('click', () => {
+menu?.addEventListener('click', () => {
   const open = menu.getAttribute('aria-expanded') === 'true';
   menu.setAttribute('aria-expanded', String(!open));
   menu.textContent = open ? '/MENU' : '/CLOSE';
