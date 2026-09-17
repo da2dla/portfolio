@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="description" content="TripOOM 프로젝트 — 정다희 포트폴리오"/><meta name="theme-color" content="#f2f2f0"/><link rel="stylesheet" href="./styles.css"/><title>TripOOM — Jeong Dahee</title></head>
+<body class="detail-page">
+  <a class="skip" href="#case">본문으로 바로가기</a><div class="loader" aria-hidden="true"><span>TRIPOOM / CASE STUDY</span><i></i></div>
+  <header class="topbar detail-nav"><a class="brand" href="./index.html">dahee<sup>®</sup></a><nav aria-label="프로젝트 메뉴"><a href="./index.html#projects">← ALL PROJECTS</a><a href="#case">/DECISIONS</a><a href="#proof">/PROOF</a></nav><button class="menu" type="button" aria-expanded="false">/MENU</button></header>
+  <main id="main">
+    <section class="detail-hero" id="top">
+      <div class="detail-count">PROJECT 01 / 02</div><h1>Trip<span>OOM</span></h1>
+      <p>다국가 지출을 환율로 환산하고,<br/>AI 소비 리포트와 복구 가능한 알림을 제공하는 여행 가계부</p>
+      <div class="detail-meta"><span>2026.05—2026.06</span><span>2-PERSON TEAM</span><span>FULL-STACK</span><span>COMPLETED</span></div>
+      <a class="back-projects" href="./index.html#projects">← ALL PROJECTS</a>
+    </section>
+    <section class="work project-case" id="case">
+      <div class="section-label"><span>01</span><i>—</i><b>CORE DECISIONS</b></div>
+      <div class="work-grid tripoom-project">
+        <aside class="work-intro"><h1>Systems that<br/><em>recover.</em></h1>
+          <div class="preview-frame" aria-live="polite">
+            <div class="tech-visual outbox-visual active" data-visual="trip-outbox"><div class="visual-top"><span>TRANSACTIONAL_OUTBOX / MYSQL</span><b>AT-LEAST-ONCE</b></div><div class="outbox-pipeline"><div><span>01</span><b>NOTIFICATION</b></div><i>+</i><div class="blue-node"><span>02</span><b>OUTBOX</b></div><i>→</i><div><span>03</span><b>WORKER</b></div><i>→</i><div><span>04</span><b>WEB PUSH</b></div></div><div class="visual-bottom"><span>ONE DB TRANSACTION</span><strong>RECOVERABLE INTENT</strong></div></div>
+            <div class="tech-visual worker-visual" data-visual="trip-worker"><div class="visual-top"><span>WORKER_CLAIM / SKIP LOCKED</span><b>30,000 VERIFIED</b></div><div class="worker-board"><div><b>W1</b><i></i><i></i><i></i><i></i><i></i></div><div><b>W2</b><i></i><i></i><i></i><i></i><i></i></div><div><b>W3</b><i></i><i></i><i></i><i></i><i></i></div><div><b>W4</b><i></i><i></i><i></i><i></i><i></i></div></div><div class="visual-bottom"><span>WITHOUT LOCK +2,880 DUPLICATES</span><strong>0 DUP / 0 REMAIN</strong></div></div>
+            <div class="tech-visual ai-visual" data-visual="trip-ai"><div class="visual-top"><span>AI_REPORT / RESPONSIBILITY</span><b>1 CALL</b></div><div class="ai-boundary"><div><span>SERVER</span><b>STATUS<br/>BUDGET<br/>FINGERPRINT</b></div><i>→</i><div class="blue-node"><span>LLM</span><b>WORDS<br/>ONLY</b></div><i>→</i><div><span>OUTPUT</span><b>3 INSIGHTS</b></div></div><div class="visual-bottom"><span>20 READS / 2 CHANGES</span><strong>85% CALLS SKIPPED*</strong></div></div>
+            <div class="tech-visual exchange-visual" data-visual="trip-exchange"><div class="visual-top"><span>EXCHANGE_RATE / NORMALIZATION</span><b>1 FX = KRW</b></div><div class="exchange-flow"><div><span>KOREA EXIM</span><b>JPY(100)<br/>945.56</b></div><div><span>FRANKFURTER</span><b>1 KRW<br/>= X USD</b></div><i>→</i><div class="normalize"><span>NORMALIZE</span><b>÷ 100<br/>1 ÷ X</b></div><i>→</i><div class="blue-node"><span>INTERNAL</span><b>1 FX<br/>= KRW</b></div></div><div class="visual-bottom"><span>PROVIDER DIFFERENCES ABSORBED</span><strong>STABLE INTERNAL MODEL</strong></div></div>
+          </div><p>JAVA 21 · SPRING BOOT 3 · MYSQL</p>
+        </aside>
+        <div class="work-list"><article class="work-row active" data-visual="trip-outbox" tabindex="0"><span>01/</span><div><h2>Outbox</h2><p>알림과 발송 의도를 하나의 트랜잭션에</p></div><small>MYSQL / WEB PUSH</small><i>↗</i></article><article class="work-row" data-visual="trip-worker" tabindex="0"><span>02/</span><div><h2>Worker Claim</h2><p>4개 Worker의 중복 없는 선점</p></div><small>SKIP LOCKED</small><i>↗</i></article><article class="work-row" data-visual="trip-ai" tabindex="0"><span>03/</span><div><h2>AI Reports</h2><p>계산과 생성을 분리한 소비 리포트</p></div><small>STRUCTURED OUTPUT</small><i>↗</i></article><article class="work-row" data-visual="trip-exchange" tabindex="0"><span>04/</span><div><h2>FX Boundary</h2><p>외부 환율 차이를 경계에서 정규화</p></div><small>EXTERNAL API</small><i>↗</i></article></div>
+      </div>
+    </section>
+    <section class="case-study" id="proof"><div class="section-label dark"><span>02</span><i>—</i><b>FAILURE PROOFS</b></div><div class="case-title reveal"><p>ONE PIPELINE, FOUR PROOFS</p><h2>Why it<br/><em>recovers.</em></h2></div><div class="notes"><article class="note reveal"><span>01</span><h3>발송 전에<br/>멈춘다면</h3><p>알림과 발송 의도를 같은 트랜잭션에 저장해 커밋 뒤 장애에도 처리할 작업이 남도록 했습니다.</p><strong>ONE COMMIT</strong></article><article class="note reveal"><span>02</span><h3>브로커도 DB와<br/>원자적이지 않다</h3><p>Kafka와 RabbitMQ에 장애를 주입해 한쪽에만 데이터가 남는 이중 쓰기를 재현했습니다.</p><strong>2 FAILURE WINDOWS</strong></article><article class="note reveal"><span>03</span><h3>30,000건,<br/>중복 0건</h3><p>4개 Worker, 1,000건, 30회 반복에서 중복 선점·처리·미처리 0건을 확인했습니다.</p><strong>SKIP LOCKED</strong></article><article class="note reveal"><span>04</span><h3>At-least-once</h3><p>상태 가드와 중복 방지 키, 재시도와 실패 종료 조건으로 전달 의미를 명확히 했습니다.</p><strong>HONEST GUARANTEE</strong></article></div></section>
+    <section class="system"><div class="section-label"><span>03</span><i>—</i><b>OUTBOX LIFECYCLE</b></div><div class="system-head reveal"><h2>Every failure<br/>has <em>a state.</em></h2><p>PROCESSING 고착 복구와 재시도 상태를 명시해 처리되지 않은 작업을 추적할 수 있게 했습니다.</p></div><div class="flow"><article><span>01</span><h3>PENDING</h3><p>발송 대기</p></article><i>→</i><article><span>02</span><h3>PROCESSING</h3><p>atomic claim</p></article><i>→</i><article><span>03</span><h3>PROCESSED</h3><p>Delivery 생성</p></article><i>↘</i><article class="retry"><span>04</span><h3>RETRY_PENDING</h3><p>일시 실패</p></article></div><div class="retry-window"><span>4 WORKERS / 30 ROUNDS</span><i>→</i><b>30,000 / 0 DUPLICATES</b></div></section>
+  </main>
+  <footer><div class="detail-footer-nav"><a href="./index.html#projects">← ALL PROJECTS</a><a href="./safy.html">NEXT — SAFY →</a></div><div class="contact-copy"><h2>Next case,<br/><em>SAFY.</em></h2><p>100m 위험도와 관제 업무 흐름을 설계한 도시 안전 프로젝트입니다.</p></div></footer>
+  <div class="progress" aria-hidden="true"></div><script src="./script.js"></script>
+</body></html>

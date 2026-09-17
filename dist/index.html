@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="정다희 백엔드 엔지니어 포트폴리오 — 프로젝트 목록" />
+  <meta name="theme-color" content="#f2f2f0" />
+  <link rel="stylesheet" href="./styles.css" />
+  <title>Jeong Dahee — Backend Engineer</title>
+</head>
+<body class="home-page">
+  <a class="skip" href="#projects">프로젝트로 바로가기</a>
+  <div class="loader" aria-hidden="true"><span>DAHEE.JEONG</span><i></i></div>
+  <header class="topbar">
+    <a class="brand" href="./index.html">dahee<sup>®</sup></a>
+    <nav aria-label="주요 메뉴"><a href="#projects">/WORK</a><a href="#about">/ABOUT</a><a href="#contact">/CONTACT</a></nav>
+    <button class="menu" type="button" aria-expanded="false">/MENU</button>
+  </header>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-word" aria-label="Reliable"><span>RE</span><b>LIABLE</b></div>
+      <div class="impossible" aria-hidden="true">
+        <svg viewBox="0 0 200 180" role="presentation"><defs><filter id="shadow"><feDropShadow dx="11" dy="15" stdDeviation="4" flood-opacity=".22" /></filter></defs><g filter="url(#shadow)"><polygon points="100,10 190,160 156,160 83,38" fill="#25262a"/><polygon points="190,160 20,160 38,130 156,130" fill="#0d0d0f"/><polygon points="20,160 100,10 117,39 52,160" fill="#151518"/><polygon points="83,38 100,67 65,130 38,130" fill="#35363b"/></g></svg>
+      </div>
+      <div class="hero-statement"><p>정상 흐름을 구현하는 데서 멈추지 않습니다.</p><em>실패 뒤에 남는 상태까지 설계합니다.</em></div>
+      <div class="hero-meta"><span>BACKEND ENGINEER · SEOUL</span><span>JAVA / SPRING / DATABASE</span><a href="#projects">SELECTED WORK ↓</a></div>
+    </section>
+
+    <section class="home-work" id="projects">
+      <div class="section-label"><span>01</span><i>—</i><b>SELECTED WORK</b></div>
+      <div class="home-work-grid">
+        <aside class="home-work-intro">
+          <h1>Work that<br /><em>works.</em></h1>
+          <div class="home-preview" aria-hidden="true">
+            <div class="home-visual tripoom-home active" data-project-preview="tripoom"><div class="mini-pipeline"><i></i><span>DB</span><b>OUTBOX</b><span>W1—W4</span><span>PUSH</span></div><p>30,000 PROCESSED<br /><strong>0 DUPLICATES</strong></p></div>
+            <div class="home-visual safy-home" data-project-preview="safy"><div class="mini-grid"><i></i><i></i><i></i><i></i><i></i></div><p>100M RISK GRID<br /><strong>STATE / LATENCY / PUSH</strong></p></div>
+          </div>
+          <small>SELECT A PROJECT TO INSPECT →</small>
+        </aside>
+        <div class="project-index">
+          <a class="project-link active" href="./tripoom.html" data-project="tripoom">
+            <span>01/</span><div><h2>TripOOM</h2><p>다국가 지출·AI 리포트·복구 가능한 알림 파이프라인</p></div><small>FULL-STACK / 2026</small><i>↗</i>
+          </a>
+          <a class="project-link" href="./safy.html" data-project="safy">
+            <span>02/</span><div><h2>SAFY</h2><p>도시 안전 제보·100m 위험도·관제 업무 시스템</p></div><small>BACKEND-LED / 2026</small><i>↗</i>
+          </a>
+          <div class="project-index-foot">02 PROJECTS · 09 ENGINEERING DECISIONS <span>( CLICK TO OPEN CASE STUDY )</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-about" id="about">
+      <div class="section-label dark"><span>02</span><i>—</i><b>APPROACH</b></div>
+      <div class="about-copy reveal"><p>BACKEND, WITH CONTEXT</p><h2>복잡한 흐름을<br />작은 결정으로<br /><em>나눕니다.</em></h2></div>
+      <div class="principles"><article><span>01</span><h3>Boundary</h3><p>외부 시스템의 불규칙함을 경계에서 흡수합니다.</p></article><article><span>02</span><h3>State</h3><p>성공과 실패가 모두 데이터로 설명되게 합니다.</p></article><article><span>03</span><h3>Operation</h3><p>재시도와 회수, 만료를 먼저 모델링합니다.</p></article><article><span>04</span><h3>Evidence</h3><p>선택의 효과를 대조군과 반복 실험으로 확인합니다.</p></article></div>
+      <div class="stack"><span>JAVA 21</span><span>SPRING BOOT</span><span>MYSQL / POSTGRESQL</span><span>REDIS</span><span>REACT / VUE</span></div>
+    </section>
+  </main>
+  <footer id="contact">
+    <div class="section-label"><span>03</span><i>—</i><b>SAY HI ANYTIME</b></div>
+    <div class="contact-copy"><h2>Bring me the<br /><em>hard one.</em></h2><p>실패 뒤에도 설명되는 백엔드가 필요하다면 이야기해 주세요.</p></div>
+    <a class="mail" href="mailto:ekgmljeong@naver.com"><span>EKGMLJEONG@NAVER.COM</span><i>↗</i></a>
+    <div class="footer-bottom"><span>© 2026 JEONG DAHEE</span><a href="https://github.com/da2dla/portfolio" target="_blank" rel="noreferrer">GITHUB ↗</a><a href="#top">BACK TO TOP ↑</a></div>
+  </footer>
+  <div class="progress" aria-hidden="true"></div>
+  <script src="./script.js"></script>
+</body>
+</html>
