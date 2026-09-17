@@ -6,8 +6,7 @@ const heroWord = document.querySelector('.hero-word');
 const impossible = document.querySelector('.impossible');
 const reveals = document.querySelectorAll('.reveal');
 const workRows = document.querySelectorAll('.work-row');
-const previewFrame = document.querySelector('.preview-frame');
-const preview = document.querySelector('#project-preview');
+const techVisuals = document.querySelectorAll('.tech-visual');
 const menu = document.querySelector('.menu');
 const nav = document.querySelector('.topbar nav');
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -33,15 +32,9 @@ const setPreview = (row) => {
   if (row.classList.contains('active')) return;
   workRows.forEach((item) => item.classList.remove('active'));
   row.classList.add('active');
-  previewFrame.classList.add('swapping');
-  const nextImage = new Image();
-  nextImage.src = row.dataset.image;
-  nextImage.onload = () => {
-    setTimeout(() => {
-      preview.src = nextImage.src;
-      previewFrame.classList.remove('swapping');
-    }, 150);
-  };
+  techVisuals.forEach((visual) => {
+    visual.classList.toggle('active', visual.dataset.visual === row.dataset.visual);
+  });
 };
 
 workRows.forEach((row) => {

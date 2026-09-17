@@ -42,23 +42,49 @@
       <div class="work-grid">
         <aside class="work-intro">
           <h1>Work that<br /><em>works.</em></h1>
-          <div class="preview-frame"><img id="project-preview" src="./assets/feed.jpg" alt="SAFY 프로젝트 화면" /></div>
+          <div class="preview-frame" aria-live="polite">
+            <div class="tech-visual risk-visual active" data-visual="risk" aria-label="100미터 위험도 격자 시각화">
+              <div class="visual-top"><span>RISK_GRID / 100M</span><b>LIVE</b></div>
+              <div class="risk-map"><i style="--x:2;--y:2;--d:.1s"></i><i style="--x:3;--y:2;--d:.3s"></i><i style="--x:6;--y:3;--d:.5s"></i><i style="--x:7;--y:4;--d:.7s"></i><i style="--x:4;--y:5;--d:.9s"></i><span class="coord">37.5012 N / 127.0396 E</span></div>
+              <div class="visual-bottom"><span>CELL_37_127</span><strong>SCORE 84</strong></div>
+            </div>
+            <div class="tech-visual history-visual" data-visual="history" aria-label="변경된 데이터 행만 남는 이력 시각화">
+              <div class="visual-top"><span>STATE_HISTORY / DIFF</span><b>−96.9%</b></div>
+              <div class="history-table"><i></i><i></i><i class="changed"></i><i></i><i></i><i class="changed"></i><i></i><i></i><i></i><i class="changed"></i></div>
+              <div class="history-count"><span>3,250,000</span><i>→</i><strong>≈100,000 / DAY</strong></div>
+            </div>
+            <div class="tech-visual latency-visual" data-visual="latency" aria-label="처리 지연 타임라인 시각화">
+              <div class="visual-top"><span>EVENT_LATENCY / TRACE</span><b>03:20</b></div>
+              <div class="latency-track"><i></i><div><span>01</span><b>REPORT</b></div><div><span>02</span><b>SCHEDULER</b></div><div><span>03</span><b>CACHE</b></div><div><span>04</span><b>CLIENT</b></div></div>
+              <div class="visual-bottom"><span><s>07:00</s> BEFORE</span><strong>03:20 NOW</strong></div>
+            </div>
+            <div class="tech-visual idempotency-visual" data-visual="idempotency" aria-label="20개 동시 요청이 하나의 이벤트로 수렴하는 시각화">
+              <div class="visual-top"><span>IDEMPOTENCY / CONCURRENT</span><b>20 → 1</b></div>
+              <svg viewBox="0 0 600 270" role="presentation"><g class="request-lines"><path d="M20 20 L470 135"/><path d="M20 32 L470 135"/><path d="M20 44 L470 135"/><path d="M20 56 L470 135"/><path d="M20 68 L470 135"/><path d="M20 80 L470 135"/><path d="M20 92 L470 135"/><path d="M20 104 L470 135"/><path d="M20 116 L470 135"/><path d="M20 128 L470 135"/><path d="M20 140 L470 135"/><path d="M20 152 L470 135"/><path d="M20 164 L470 135"/><path d="M20 176 L470 135"/><path d="M20 188 L470 135"/><path d="M20 200 L470 135"/><path d="M20 212 L470 135"/><path d="M20 224 L470 135"/><path d="M20 236 L470 135"/><path d="M20 248 L470 135"/></g><circle cx="470" cy="135" r="20"/><path class="output-line" d="M490 135 H580"/></svg>
+              <div class="visual-bottom"><span>20 REQUESTS</span><strong>1 EVENT</strong></div>
+            </div>
+            <div class="tech-visual push-visual" data-visual="push" aria-label="웹 푸시 상태 전이 시각화">
+              <div class="visual-top"><span>WEB_PUSH / LIFECYCLE</span><b>RETRYABLE</b></div>
+              <div class="push-flow"><div><span>01</span><b>PENDING</b></div><i>→</i><div><span>02</span><b>PROCESSING</b></div><i>→</i><div><span>03</span><b>COMPLETED</b></div><em></em><div class="retry-node"><span>04</span><b>RETRY_WAIT</b></div></div>
+              <div class="visual-bottom"><span>4XX TERMINATE</span><strong>429 RETRY</strong></div>
+            </div>
+          </div>
           <p>SAFY · URBAN SAFETY PLATFORM</p>
         </aside>
         <div class="work-list">
-          <article class="work-row active" data-image="./assets/feed.jpg">
+          <article class="work-row active" data-visual="risk" tabindex="0">
             <span>01/</span><div><h2>Risk Engine</h2><p>100m 격자 위험도 엔진</p></div><small>DOMAIN / GEO · 2026</small><i>↗</i>
           </article>
-          <article class="work-row" data-image="./assets/report.jpg">
+          <article class="work-row" data-visual="history" tabindex="0">
             <span>02/</span><div><h2>State History</h2><p>변경된 셀만 기록하는 이력</p></div><small>DATA / POLICY · 2026</small><i>↗</i>
           </article>
-          <article class="work-row" data-image="./assets/live.jpg">
+          <article class="work-row" data-visual="latency" tabindex="0">
             <span>03/</span><div><h2>Latency</h2><p>반영 지연을 세 계층으로 분해</p></div><small>CACHE / SCHEDULER · 2026</small><i>↗</i>
           </article>
-          <article class="work-row" data-image="./assets/report.jpg">
+          <article class="work-row" data-visual="idempotency" tabindex="0">
             <span>04/</span><div><h2>Idempotency</h2><p>20번 요청에도 한 번만 처리</p></div><small>ATOMIC CLAIM · 2026</small><i>↗</i>
           </article>
-          <article class="work-row" data-image="./assets/feed.jpg">
+          <article class="work-row" data-visual="push" tabindex="0">
             <span>05/</span><div><h2>Web Push</h2><p>실패를 상태로 남기는 발송</p></div><small>LIFECYCLE / RETRY · 2026</small><i>↗</i>
           </article>
           <div class="work-end">BACKEND · SYSTEMS · OPERATIONS · EVIDENCE <span>( DESIGNED, BUILT, VERIFIED )</span></div>
